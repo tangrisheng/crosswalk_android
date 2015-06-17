@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<h1>This is a HTML Page</h1>
+<script type="text/javascript" src="./js/SensoroCordova.js"></script>
+<script type="text/javascript">
+	function load()
+	{
+		// alert(SensoroInstance.addEvent);
+		SensoroInstance.addEvent('newbeacon', listenNewFunction);
+	}
+    //JavaScript方法，弹出对话框显示信息
+    function myFunction(message)
+    {
+        alert(message);
+    }
+    
+    function listenNewFunction(beacon)
+    {
+        //alert(beacon);
+        var header = document.getElementById('beacon');
+        header.value = beacon;
+    }
+
+</script>
+</head>
+<body onload = "load()">
+
+	<p>
+		<h1 id="beacon">This is a header</h1>
+	</p>
+
+</body>
+</html>
